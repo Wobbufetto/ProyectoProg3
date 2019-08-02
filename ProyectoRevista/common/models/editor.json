@@ -1,0 +1,51 @@
+{
+  "name": "Editor",
+  "plural": "Editors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "secondName": {
+      "type": "string"
+    },
+    "firstSurname": {
+      "type": "string",
+      "required": true
+    },
+    "seconfSurname": {
+      "type": "string"
+    },
+    "Country": {
+      "type": "string",
+      "required": true
+    },
+    "cellPhone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "membership": {
+      "type": "string",
+      "required": true
+    },
+    "education": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
