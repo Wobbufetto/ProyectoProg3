@@ -50,5 +50,9 @@
   "Evaluator": {
     "dataSource": "db",
     "public": true
+  },
+  "article": {
+    "dataSource": "db",
+    "public": true
   }
 }

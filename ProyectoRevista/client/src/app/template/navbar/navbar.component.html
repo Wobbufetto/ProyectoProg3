@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+
+  <nav class="blue">
+    <div class="nav-wrapper">
+      <a routerLink="#!" class="brand-logo">Revista Vector</a>
+      <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/user/login">Login</a></li>
+        <li><a routerLink="/user/logout">Logout</a></li>
+        <li><a routerLink="/admin/article/list">Article Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a routerLink="/user/login">Login</a></li>
+    <li><a routerLink="/user/logout">Logout</a></li>
+    <li><a routerLink="/admin/article/list">Article Admin</a></li>
+  </ul>
+          
