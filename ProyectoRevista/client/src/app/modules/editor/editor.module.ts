@@ -12,6 +12,11 @@ import { EditorHomeComponent } from './public/editor-home/editor-home.component'
   imports: [
     CommonModule,
     EditorRoutingModule
+  ],
+  exports:[
+    EditorListComponent,
+    EditorEditComponent,
+    EditorCreateComponent
   ]
 })
 export class EditorModule { }

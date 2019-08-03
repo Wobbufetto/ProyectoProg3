@@ -11,6 +11,11 @@ import { UserEditorComponent } from './users/user-editor/user-editor.component';
   imports: [
     CommonModule,
     SecurityRoutingModule
+  ],
+  exports:[
+    UserListComponent,
+    UserEditorComponent,
+    UserCreatorComponent
   ]
 })
 export class SecurityModule { }

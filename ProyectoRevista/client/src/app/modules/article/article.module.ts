@@ -14,7 +14,10 @@ import { ArticleListComponent } from './admin/article-list/article-list.componen
     ArticleRoutingModule
   ],
   exports: [
-
+    ArticleCreatorComponent,
+    ArticleEditComponent,
+    ArticleListComponent,
+    ArticleHomeComponent
   ]
 })
 export class ArticleModule { }

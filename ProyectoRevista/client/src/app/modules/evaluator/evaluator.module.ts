@@ -12,6 +12,11 @@ import { EvaluatorHomeComponent } from './public/evaluator-home/evaluator-home.c
   imports: [
     CommonModule,
     EvaluatorRoutingModule
+  ],
+  exports:[
+    EvaluatorListComponent,
+    EvaluatorEditComponent,
+    EvaluatorCreateComponent
   ]
 })
 export class EvaluatorModule { }

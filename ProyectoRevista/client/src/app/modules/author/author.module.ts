@@ -12,6 +12,11 @@ import { AuthorHomeComponent } from './public/author-home/author-home.component'
   imports: [
     CommonModule,
     AuthorRoutingModule
+  ],
+  exports:[
+    AuthorListComponent,
+    AuthorCreatorComponent,
+    AuthorEditComponent
   ]
 })
 export class AuthorModule { }
