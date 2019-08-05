@@ -1,34 +1,21 @@
 {
-  "name": "article",
-  "plural": "Articles",
+  "name": "user",
+  "plural": "users",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "code": {
+    "Email": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "password": {
       "type": "string",
       "required": true
     },
-    "abstract": {
-      "type": "string",
-      "required": true
-    },
-    "keywords": {
-      "type": "string",
-      "required": true,
-      "default": "\"Palabra clave;\""
-    },
-    "authors": {
-      "type":"string",
-      "required": true
-    },
-    "image":{
+    "completeName": {
       "type": "string",
       "required": true
     }

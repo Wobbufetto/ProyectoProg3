@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SecurityRoutingModule } from './security-routing.module';
-import { UserListComponent } from './users/user-list/user-list.component';
-import { UserCreatorComponent } from './users/user-creator/user-creator.component';
-import { UserEditorComponent } from './users/user-editor/user-editor.component';
+import { LoginComponent } from './users/login/login.component';
+import { LogoutComponent } from './users/logout/logout.component';
+import { RegisterComponent } from './users/register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [UserListComponent, UserCreatorComponent, UserEditorComponent],
+  declarations: [RegisterComponent, LoginComponent, LogoutComponent],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SecurityRoutingModule,
+    FormsModule
   ],
   exports:[
-    UserListComponent,
-    UserEditorComponent,
-    UserCreatorComponent
+    RegisterComponent,
+    LoginComponent,
+    LogoutComponent
   ]
 })
 export class SecurityModule { }

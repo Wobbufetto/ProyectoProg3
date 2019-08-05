@@ -7,23 +7,23 @@ import { ArticleHomeComponent } from './public/article-home/article-home.compone
 
 const routes: Routes = [
   {
-    path: 'admin/article/list',
+    path: 'admin/articles/list',
     component: ArticleListComponent
   },
   {
-    path: 'admin/article/creator',
+    path: 'admin/articles/creator',
     component: ArticleCreatorComponent
   },
   {
-    path: 'admin/article/editor',
+    path: 'admin/articles/editor',
     component: ArticleEditComponent
   },
   {
-    path: '/article/home',
+    path: 'articles/home',
     component: ArticleHomeComponent
   },
   {
-    path: 'admin/article/list',
+    path: 'admin/articles/list',
     component: ArticleListComponent
   }
 

@@ -38,9 +38,7 @@
       "required": true
     },
     "education": {
-      "type": [
-        "string"
-      ],
+      "type":"string",
       "required": true
     }
   },

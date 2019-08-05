@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserListComponent } from './users/user-list/user-list.component';
-import { UserCreatorComponent } from './users/user-creator/user-creator.component';
-import { UserEditorComponent } from './users/user-editor/user-editor.component';
+import { RegisterComponent } from './users/register/register.component';
+import { LoginComponent } from './users/login/login.component';
+import { LogoutComponent } from './users/logout/logout.component';
 
 const routes: Routes = [
   {
-    path: 'admin/user/list',
-    component: UserListComponent
+    path: 'user/register',
+    component: RegisterComponent
   },
   {
-    path: 'admin/user/creator',
-    component: UserCreatorComponent
+    path: 'user/login',
+    component: LoginComponent
   },
   {
-    path: 'admin/user/editor',
-    component: UserEditorComponent
+    path: 'user/logout',
+    component: LogoutComponent
   }
 ];
 
