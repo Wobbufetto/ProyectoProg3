@@ -41,7 +41,7 @@
       "type":"string",
       "required": true
     },
-    "specialty": {
+    "speciality": {
       "type": "string",
       "required": true
     }

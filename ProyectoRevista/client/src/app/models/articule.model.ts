@@ -5,4 +5,6 @@ export interface ArticleModel{
     keywords: string;
     authors : string;
     image : string;
+    state : string;
+    date: Date;
 }

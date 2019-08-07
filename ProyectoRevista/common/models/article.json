@@ -31,6 +31,14 @@
     "image":{
       "type": "string",
       "required": true
+    },
+    "state":{
+      "type": "string",
+      "required": true
+    },
+    "date":{
+      "type": "Date",
+      "required": true
     }
   },
   "validations": [],

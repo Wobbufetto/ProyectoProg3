@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ArticleModel } from '../models/articule.model';
 
@@ -15,5 +15,28 @@ export class ArticleService {
     return this.http.get<ArticleModel[]>(`${base_url}Articles`);
   }
 
+  getArticleById(articleId: string): Observable<ArticleModel>{
+    return this.http.get<ArticleModel>(`${base_url}Articles/${articleId}`);
+  }
+
+  saveNewArticle(article: ArticleModel): Observable<ArticleModel>{
+    return this.http.post<ArticleModel>(`${base_url}Articles`, article, {
+      headers: new HttpHeaders({
+        "content-type":"application/json"
+      })
+    })
+  }
+
+  updateArticle(article: ArticleModel): Observable<ArticleModel>{
+    return this.http.put<ArticleModel>(`${base_url}Articles`, article, {
+      headers: new HttpHeaders({
+        "content-type":"application/json"
+      })
+    });
+  }
+
+  deleteArticle(articleId: String): Observable<ArticleModel>{
+    return this.http.delete<ArticleModel>(`${base_url}Articles/${articleId}`);
+  }
   
 }

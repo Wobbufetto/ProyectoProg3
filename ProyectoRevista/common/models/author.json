@@ -18,10 +18,10 @@
       "type": "string",
       "required": true
     },
-    "seconfSurname": {
+    "secondSurname": {
       "type": "string"
     },
-    "Country": {
+    "country": {
       "type": "string",
       "required": true
     },
