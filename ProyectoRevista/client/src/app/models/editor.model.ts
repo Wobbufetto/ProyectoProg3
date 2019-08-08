@@ -1,4 +1,5 @@
 export interface EditorModel{
+    id: string;
     firstName : string;
     secondName: string;
     firstSurname: string;

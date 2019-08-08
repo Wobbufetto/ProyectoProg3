@@ -9,7 +9,7 @@ import { FooterComponent } from './template/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './template/home/home.component';
 import { PageNotFoundComponent } from './template/page-not-found/page-not-found.component';
-import { LoginComponent } from './modules/security/users/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { LoginComponent } from './modules/security/users/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

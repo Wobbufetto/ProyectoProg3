@@ -1,1 +1,12 @@
-<p>author-list works!</p>
+<div class="row s12">
+    <ul *ngFor="let a of authorList" class="collection col s4">&nbsp;&nbsp;
+        <li class="collection-item avatar">
+            <img src="" alt="" class="circle">
+            <span class="title">{{a.firstName}} {{a.firstSurname}}</span>
+            <p>{{a.education}}<br>
+                {{a.email}}
+            </p>
+            <a routerLink="author/articles" class="secondary-content"><i class="material-icons">storage</i></a>
+        </li> 
+    </ul>
+</div>

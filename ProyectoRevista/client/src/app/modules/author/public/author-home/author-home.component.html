@@ -1,3 +1,11 @@
+<br />
+<a class="waves-effect waves-light btn green" routerLink="/admin/articles/creator">
+    <i class="material-icons right">add</i>
+    Add new article
+</a>
+
+<br />
+
 <table>
     <thead>
         <tr>
@@ -19,21 +27,24 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor= "let a of articleList">
+        <tr *ngFor="let a of articleList">
             <td>
-                a.title
+                {{a.title}}
             </td>
             <td>
-                a.date
+                {{a.date}}
             </td>
             <td>
-                
+                {{a.state}}
             </td>
             <td>
-                
+                <a class="waves-effect waves-light btn green">
+                    <i class="material-icons right ">file_download</i>
+                    Download</a>
             </td>
             <td>
-                
+                <a class="waves-effect waves-light btn red" routerLink="/admin/articles/editor/{{a.id}}"><i
+                        class="material-icons right">edit</i>Edit</a>
             </td>
         </tr>
     </tbody>

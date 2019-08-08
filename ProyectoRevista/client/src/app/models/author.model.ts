@@ -1,4 +1,5 @@
 export interface AuthorModel{
+    id: string;
     firstName : string;
     secondName: string;
     firstSurname: string;

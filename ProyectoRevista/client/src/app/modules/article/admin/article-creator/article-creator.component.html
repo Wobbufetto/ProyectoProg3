@@ -1,1 +1,50 @@
-<p>article-creator works!</p>
+<div class="row center">
+    <div class="row">
+        <div class="section">
+            <strong>New article from</strong>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.title" id="title" type="text" class="validate">
+            <label for="title">Article title</label>
+        </div>
+        <div class="input-field col s12">
+            <input [(ngModel)]="article.abstract" id="abstract" type="text" class="validate">
+            <label for="abstract">Article abstract</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s9">
+            <input [(ngModel)]="article.keywords" placeholder="Article keywords;" id="keywords" type="text" class="validate">
+            <label for="keywords">Article keywords</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <strong>Authors from</strong>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.authorName" id="firstName" type="text" class="validate">
+            <label for="firstName">First Name</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.authorSurname" id="firstSurname" type="text" class="validate">
+            <label for="firstSurname">First Surname</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="afiliation" type="text" class="validate">
+            <label for="afiliation">Arthor Afiliation</label>
+        </div>
+        <div class="input-field col s3">
+            <input id="email" type="Email" class="validate">
+            <label for="email">Arthor Email</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a class="waves-effect waves-light btn green" (click)="saveNewArticle()">
+                <i class="material-icons right">save</i>
+            Save</a>
+        </div>
+    </div>
+</div>

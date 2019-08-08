@@ -24,7 +24,11 @@
       "required": true,
       "default": "\"Palabra clave;\""
     },
-    "authors": {
+    "authorName": {
+      "type":"string",
+      "required": true
+    },
+    "authorSurname": {
       "type":"string",
       "required": true
     },

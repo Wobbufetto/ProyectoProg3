@@ -7,7 +7,7 @@ const base_url: string = 'http://localhost:3000/api/'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthorService {
+export class EditorService {
 
   constructor(private http: HttpClient) { }
 

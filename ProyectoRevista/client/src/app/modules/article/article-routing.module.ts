@@ -15,7 +15,7 @@ const routes: Routes = [
     component: ArticleCreatorComponent
   },
   {
-    path: 'admin/articles/editor',
+    path: 'admin/articles/editor/:id',
     component: ArticleEditComponent
   },
   {
