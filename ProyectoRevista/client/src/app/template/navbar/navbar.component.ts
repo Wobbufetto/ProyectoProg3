@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  userLogged: boolean = false;
+  completeName: string = '';
+  dirEmail : string = '';
 
   ngOnInit() {
+    this.showMenu();
   }
 
+  showMenu(): void {
+    let userInfo = this.userService.getUserInformation();
+    if (isNullOrUndefined(userInfo)) {
+      this.userLogged = false;
+    } else {
+      this.userLogged = true;
+      this.completeName = userInfo.realm;
+      this.dirEmail = userInfo.email;
+    }
+  }
+  
 }

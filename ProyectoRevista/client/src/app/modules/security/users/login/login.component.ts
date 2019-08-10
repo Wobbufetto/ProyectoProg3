@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
 
   email: string = '';
@@ -21,6 +22,8 @@ export class LoginComponent implements OnInit {
       //console.warn(item.user);
       this.userService.saveToken(item.id);
       this.userService.saveUserInformation(item.user);
+      this.router.navigate(["/articles/home"])
+      location.reload(); 
     })
   }
 

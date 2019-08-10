@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { isNullOrUndefined } from 'util';
 
 const base_url = 'http://localhost:3000/api/';
 
@@ -28,6 +29,11 @@ export class UserService {
       });
   }
 
+  logoutUser(){
+    localStorage.removeItem("userInfo");
+    localStorage.removeItem("userTk");
+  }
+
   saveToken(token){
     localStorage.setItem("userTK", token);
   }
@@ -41,6 +47,10 @@ export class UserService {
   }
 
   getUserInformation(){
-    return (JSON.stringify(localStorage.getItem("userInfo")));
+    let userInfo = localStorage.getItem("userInfo");
+    if (isNullOrUndefined(userInfo)){
+      return null;
+    }
+    return (JSON.parse(userInfo));
   }
 }
