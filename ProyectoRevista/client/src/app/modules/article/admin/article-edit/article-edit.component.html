@@ -1,52 +1,54 @@
 <div class="row center">
     <input [(ngModel)]="article.id" type="hidden" id="id" />
-        <div class="row">
-            <div class="section">
-                <strong>New article from</strong>
-            </div>
-            <div class="input-field col s3">
-                <input [(ngModel)]="article.title" id="title" type="text" class="validate">
-                <label class="active" for="title">Article title</label>
-            </div>
-            <div class="input-field col s12">
-                <input [(ngModel)]="article.abstract" id="abstract" type="text" class="validate">
-                <label class="active" for="abstract">Article abstract</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s9">
-                <input [(ngModel)]="article.keywords" placeholder="Article keywords;" id="keywords" type="text"
-                    class="validate">
-                <label class="active" for="keywords">Article keywords</label>
-            </div>
-        </div>
-
+    <div class="row">
         <div class="section">
-            <strong>Authors from</strong>
+            <strong>New article from</strong>
         </div>
-        <div class="row">
-            <div class="input-field col s3">
-                <input  id="firstName" type="text" class="validate">
-                <label for="firstName">First Name</label>
-            </div>
-            <div class="input-field col s3">
-                <input id="firstSurname" type="text" class="validate">
-                <label for="firstSurname">First Surname</label>
-            </div>
-            <div class="input-field col s3">
-                <input id="afiliation" type="text" class="validate">
-                <label for="afiliation">Arthor Afiliation</label>
-            </div>
-            <div class="input-field col s3">
-                <input id="email" type="Email" class="validate">
-                <label for="email">Arthor Email</label>
-            </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.title" id="title" type="text" class="validate">
+            <label class="active" for="title">Article title</label>
         </div>
-        <div class="row">
-            <div class="col s12">
-                <a class="waves-effect waves-light btn green" (click)="updateArticle()">
-                    <i class="material-icons right">update</i>
-                    Update</a>
-            </div>
+        <div class="input-field col s12">
+            <input [(ngModel)]="article.abstract" id="abstract" type="text" class="validate">
+            <label class="active" for="abstract">Article abstract</label>
         </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s9">
+            <input [(ngModel)]="article.keywords" placeholder="Article keywords;" id="keywords" type="text"
+                class="validate">
+            <label class="active" for="keywords">Article keywords</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.authorName" id="firstName" type="text" class="validate">
+            <label class="active" for="firstName">Author First Name</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.authorSurname" id="firstSurname" type="text" class="validate">
+            <label class="active" for="firstSurname">Author First Surname</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s5">
+            <input [(ngModel)]="article.image" id="image" type="text" class="validate">
+            <label class="active" for="image">Article Image</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.state" id="state" type="text" class="validate">
+            <label class="active" for="state">Article state</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="article.date" id="date" type="date" class="validate">
+            <label class="active" for="date">Article state</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a class="waves-effect waves-light btn green" (click)="updateArticle()">
+                <i class="material-icons right">update</i>
+                Update</a>
+        </div>
+    </div>
 </div>

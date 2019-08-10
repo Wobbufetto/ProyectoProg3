@@ -21,12 +21,7 @@ const routes: Routes = [
   {
     path: 'articles/home',
     component: ArticleHomeComponent
-  },
-  {
-    path: 'admin/articles/list',
-    component: ArticleListComponent
   }
-
 ];
 
 @NgModule({

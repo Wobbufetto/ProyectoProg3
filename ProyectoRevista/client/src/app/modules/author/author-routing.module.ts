@@ -19,7 +19,7 @@ const routes: Routes = [
     component: AuthorEditComponent
   },
   {
-    path: 'author/articles',
+    path: 'author/articles/:authorName',
     component: AuthorHomeComponent
   }
 ];

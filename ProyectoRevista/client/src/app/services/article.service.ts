@@ -27,6 +27,10 @@ export class ArticleService {
     })
   }
 
+  getArticleByAuthor(authorName: string):Observable<ArticleModel[]>{
+    return this.http.get<ArticleModel[]>(`${base_url}Articles/get-article-by-author?authorName=${authorName}`);
+  }
+
   updateArticle(article: ArticleModel): Observable<ArticleModel>{
     return this.http.put<ArticleModel>(`${base_url}Articles`, article, {
       headers: new HttpHeaders({

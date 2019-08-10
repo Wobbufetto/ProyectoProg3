@@ -37,8 +37,7 @@
       "required": true
     },
     "state":{
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "date":{
       "type": "Date",
