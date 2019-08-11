@@ -9,5 +9,27 @@
     "user": "",
     "useNewUrlParser": true,
     "connector": "mongodb"
+  },
+  "Email": {
+    "name": "Email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "SMTP",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "auth": {
+          "user": "pruebasprogramacion3@gmail.com",
+          "pass": "Wingo2302"
+        }
+      }
+    ]
+  },
+  "UploadFiles": {
+    "name": "UploadFiles",
+    "connector": "loopback-component-storage",
+    "provider": "fileSystem",
+    "root": "./server/files"
   }
 }

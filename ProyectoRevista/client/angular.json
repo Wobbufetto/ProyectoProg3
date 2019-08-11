@@ -29,7 +29,8 @@
             ],
             "scripts": [
               "node_modules/materialize-css/dist/js/materialize.js",
-              "src/assets/js/myScript.js"
+              "src/assets/js/myScript.js",
+              "../node_modules/crypto-js/crypto-js.js"
             ]
           },
           "configurations": {

@@ -3,6 +3,7 @@ import { ArticleModel } from 'src/app/models/articule.model';
 import { ArticleService } from 'src/app/services/article.service';
 import { Router } from '@angular/router';
 import { AuthorModel } from 'src/app/models/author.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-article-creator',
@@ -11,8 +12,10 @@ import { AuthorModel } from 'src/app/models/author.model';
 })
 export class ArticleCreatorComponent implements OnInit {
 
-  constructor(private artService: ArticleService, private router: Router) { }
+  constructor(private artService: ArticleService, private router: Router, private http: HttpClient) { }
 
+
+  uploadedFiles: Array<File>;
   article: ArticleModel = {
     id: null,
     code: null,
@@ -47,6 +50,14 @@ export class ArticleCreatorComponent implements OnInit {
       alert("The article has been stored sucessfully");
       this.router.navigate(["articles/home"]);
     });
+  }
+
+  upload() {
+    let formData = new FormData();
+    formData.append("uploads[]", this.uploadedFiles[0], this.uploadedFiles[0].name);
+    this.http.post('/api/containers/images/upload', formData).subscribe((response) => {
+      console.log('PDF receiveed is', response);
+    })
   }
 
 }

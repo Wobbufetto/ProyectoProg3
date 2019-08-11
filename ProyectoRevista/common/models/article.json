@@ -25,21 +25,21 @@
       "default": "\"Palabra clave;\""
     },
     "authorName": {
-      "type":"string",
-      "required": true
-    },
-    "authorSurname": {
-      "type":"string",
-      "required": true
-    },
-    "image":{
       "type": "string",
       "required": true
     },
-    "state":{
+    "authorSurname": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
       "type": "string"
     },
-    "date":{
+    "date": {
       "type": "Date",
       "required": true
     }

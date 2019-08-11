@@ -58,5 +58,13 @@
   "user": {
     "dataSource": "db",
     "public": true
+  },
+  "Email": {
+    "dataSource": "Email",
+    "public": true
+  },
+  "containers": {
+    "dataSource": "UploadFiles",
+    "public": true
   }
 }

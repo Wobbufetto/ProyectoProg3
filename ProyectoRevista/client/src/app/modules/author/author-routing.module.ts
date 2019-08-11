@@ -4,23 +4,36 @@ import { AuthorListComponent } from './admin/author-list/author-list.component';
 import { AuthorCreatorComponent } from './admin/author-creator/author-creator.component';
 import { AuthorEditComponent } from './admin/author-edit/author-edit.component';
 import { AuthorHomeComponent } from './public/author-home/author-home.component';
+import { UrlInjectionGuard } from 'src/app/guards/url-injection.guard';
 
 const routes: Routes = [
   {
     path: 'admin/author/list',
-    component: AuthorListComponent
+    component: AuthorListComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'admin/author/creator',
-    component: AuthorCreatorComponent
+    component: AuthorCreatorComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'admin/author/editor',
-    component: AuthorEditComponent
+    component: AuthorEditComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'author/articles/:authorName',
-    component: AuthorHomeComponent
+    component: AuthorHomeComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   }
 ];
 

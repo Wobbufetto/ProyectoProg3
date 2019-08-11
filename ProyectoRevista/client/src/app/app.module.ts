@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './template/home/home.component';
 import { PageNotFoundComponent } from './template/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
+import {EncrDecrService} from './services/encr-decr-service.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EncrDecrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

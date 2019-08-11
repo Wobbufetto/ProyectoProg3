@@ -53,6 +53,7 @@ export class ArticleEditComponent implements OnInit {
   updateArticle() {
     this.artService.updateArticle(this.article).subscribe(item => {
       alert("This article has been updated successfuly!");
+      console.log(this.article.authorName);
       this.router.navigate(["/admin/author/list"])
     })
   }

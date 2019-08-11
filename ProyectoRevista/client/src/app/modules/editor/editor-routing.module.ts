@@ -3,19 +3,29 @@ import { Routes, RouterModule } from '@angular/router';
 import { EditorListComponent } from './admin/editor-list/editor-list.component';
 import { EditorEditComponent } from './admin/editor-edit/editor-edit.component';
 import { EditorCreateComponent } from './admin/editor-create/editor-create.component';
+import { UrlInjectionGuard } from 'src/app/guards/url-injection.guard';
 
 const routes: Routes = [
   {
     path: 'admin/editor/list',
-    component: EditorListComponent
+    component: EditorListComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'admin/editor/creator',
-    component: EditorCreateComponent
+    component: EditorCreateComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   },
   {
     path: 'admin/editor/editor',
-    component: EditorEditComponent
+    component: EditorEditComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   }
 ];
 
