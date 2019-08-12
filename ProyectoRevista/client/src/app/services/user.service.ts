@@ -18,10 +18,11 @@ export class UserService {
 
 
   loginUser(email: string, password: string): Observable<UserModel> {
-    return this.http.post<UserModel>(`${base_url}Users/login?include=user`, {
-      email,
-      password
-    },
+    return this.http.post<UserModel>(`${base_url}Users/login?include=user`,
+      {
+        email,
+        password
+      },
       {
         headers: new HttpHeaders({
           "content-type": "application/json"
@@ -29,34 +30,34 @@ export class UserService {
       });
   }
 
-  logoutUser(){
+  logoutUser() {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("userTk");
   }
 
-  saveToken(token){
+  saveToken(token) {
     localStorage.setItem("userTK", token);
   }
 
-  getToken(token){
+  getToken() {
     return localStorage.getItem("userTk");
   }
 
-  saveUserInformation(user: UserModel): void{
+  saveUserInformation(user: UserModel): void {
     localStorage.setItem("userInfo", JSON.stringify(user));
   }
 
-  saveNewUser(user: UserModel): Observable<UserModel>{
+  saveNewUser(user: UserModel): Observable<UserModel> {
     return this.http.post<UserModel>(`${base_url}Users`, user, {
       headers: new HttpHeaders({
-        "content-type":"application/json"
+        "content-type": "application/json"
       })
     })
   }
 
-  getUserInformation(){
+  getUserInformation() {
     let userInfo = localStorage.getItem("userInfo");
-    if (isNullOrUndefined(userInfo)){
+    if (isNullOrUndefined(userInfo)) {
       return null;
     }
     return (JSON.parse(userInfo));

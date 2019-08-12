@@ -5,6 +5,5 @@ export interface UserModel{
     email: string;
     password: string;
     rol: number;
-    user: UserModel;
-
+    user: UserModel
 }

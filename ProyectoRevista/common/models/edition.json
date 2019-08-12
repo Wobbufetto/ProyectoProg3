@@ -1,0 +1,32 @@
+{
+  "name": "edition",
+  "plural": "editions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "volEdition": {
+      "type": "string",
+      "required": true,
+      "default": "Volumen"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "dateLimit": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

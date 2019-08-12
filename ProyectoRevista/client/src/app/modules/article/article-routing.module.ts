@@ -5,6 +5,8 @@ import { ArticleCreatorComponent } from './admin/article-creator/article-creator
 import { ArticleEditComponent } from './admin/article-edit/article-edit.component';
 import { ArticleHomeComponent } from './public/article-home/article-home.component';
 import { UrlInjectionGuard } from 'src/app/guards/url-injection.guard';
+import { CreateEditionComponent } from './admin/create-edition/create-edition.component';
+import { ArticleEditionComponent } from './public/article-edition/article-edition.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,17 @@ const routes: Routes = [
     canActivate: [
       UrlInjectionGuard
     ]
+  },
+  {
+    path:'edition/articles/creator',
+    component: CreateEditionComponent,
+    canActivate:[
+      UrlInjectionGuard
+    ]
+  },
+  {
+    path: 'edition/articles',
+    component: ArticleEditionComponent
   }
 ];
 

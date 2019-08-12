@@ -21,7 +21,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'admin/evaluator/editor',
+    path: 'admin/evaluator/editor/:id',
     component: EvaluatorEditComponent,
     canActivate: [
       UrlInjectionGuard

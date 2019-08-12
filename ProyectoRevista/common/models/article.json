@@ -18,7 +18,7 @@
     "keywords": {
       "type": "string",
       "required": true,
-      "default": "\"Palabra clave;\""
+      "default": "Palabra clave;"
     },
     "authorName": {
       "type": "string",
@@ -29,17 +29,18 @@
       "required": true
     },
     "articlePDf": {
-      "type": "string",
+      "type": "File",
       "required": true
     },
     "state": {
-      "type": "string"
+      "type": "string",
+      "default": "Enviado"
     },
     "date": {
       "type": "Date",
       "required": true
     },
-    "image":{
+    "image": {
       "type": "string",
       "required": true
     }

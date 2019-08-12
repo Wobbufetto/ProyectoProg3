@@ -44,6 +44,10 @@
     "speciality": {
       "type": "string",
       "required": true
+    },
+    "state": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

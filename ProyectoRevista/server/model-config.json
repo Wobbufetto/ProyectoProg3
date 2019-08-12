@@ -66,5 +66,9 @@
   "containers": {
     "dataSource": "UploadFiles",
     "public": true
+  },
+  "edition": {
+    "dataSource": "db",
+    "public": true
   }
 }

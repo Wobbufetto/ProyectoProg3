@@ -15,20 +15,7 @@ export class ArticleListComponent implements OnInit {
   showConfirmationButtons: boolean = false;
 
   articleList: ArticleModel[] = [];
-  /*
-  article: ArticleModel = {
-    id: null,
-    code: null,
-    title: null,
-    abstract: null,
-    keywords: null,
-    image: null,
-    authorName: null,
-    authorSurname: null,
-    state: null,
-    date: null
-  }
-  */
+
   idToShowButtons: string = '';
   ngOnInit() {
     this.searchAuthor();
@@ -58,6 +45,13 @@ export class ArticleListComponent implements OnInit {
   ChangeConfirmationButtons(id) {
     this.idToShowButtons = id;
     this.showConfirmationButtons = !this.showConfirmationButtons;
+  }
+
+  deleteArticle(articleId: string): void {
+    this.artService.deleteArticle(articleId).subscribe(item => {
+      console.log(item);
+      this.router.navigate(["/admin/author/list"])
+    })
   }
 }
 

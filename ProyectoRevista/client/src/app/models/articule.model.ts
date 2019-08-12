@@ -5,7 +5,7 @@ export interface ArticleModel{
     keywords: string;
     authorName : string;
     authorSurname: string;
-    articlePDf : string;
+    articlePDf : File;
     state : string;
     date: Date;
     image: string;

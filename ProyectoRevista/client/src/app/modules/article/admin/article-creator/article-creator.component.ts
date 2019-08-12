@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleModel } from 'src/app/models/articule.model';
 import { ArticleService } from 'src/app/services/article.service';
 import { Router } from '@angular/router';
-import { AuthorModel } from 'src/app/models/author.model';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-article-creator',
@@ -51,39 +49,14 @@ export class ArticleCreatorComponent implements OnInit {
   }
 
   uploadedFiles: Array<File>;
-  /*
-  article: ArticleModel = {
-    id: null,
-    title: null,
-    abstract: null,
-    keywords: null,
-    image: null,
-    authorName: null,
-    authorSurname: null,
-    state: null,
-    date: null
-  }
 
-  author: AuthorModel = {
-    id: null,
-    firstName: null,
-    secondName: null,
-    firstSurname: null,
-    secondSurname: null,
-    country: null,
-    cellPhone: null,
-    email: null,
-    membership: null,
-    education: null
-  }
-  */
   ngOnInit() {
   }
 
   saveNewArticle(): void {
     if (this.articleFormGroup.valid) {
       let article = this.buildArticleData();
-      this.artService.saveNewArticle(article).subscribe(item =>{
+      this.artService.saveNewArticle(article).subscribe(item => {
         alert("The article has been stored successfully!");
         this.router.navigate(["/articles/home"])
       })

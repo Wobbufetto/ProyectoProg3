@@ -52,8 +52,8 @@
         </div>
         <div class="row">
             <div class="input-field col s3">
-                <input formControlName="authorName" id="firstName" type="text" class="validate">
-                <label for="firstName">First Name</label>
+                <input formControlName="authorName" id="authorName" type="text" class="validate">
+                <label for="authorName">First Name</label>
                 <div class="errorContainer" *ngIf="(authorName.touched || authorName.dirty) && authorName.invalid">
                     <div *ngIf="authorName.errors.required" class="card-panel orange">
                         This field is required!
@@ -67,10 +67,9 @@
                 </div>
             </div>
             <div class="input-field col s3">
-                <input formControlName="authorSurname" id="firstSurname" type="text" class="validate">
-                <label for="firstSurname">First Surname</label>
-                <div class="errorContainer"
-                    *ngIf="(authorSurname.touched || authorSurname.dirty) && authorSurname.invalid">
+                <input formControlName="authorSurname" id="authorSurname" type="text" class="validate">
+                <label for="authorSurname">First Surname</label>
+                <div class="errorContainer" *ngIf="(authorSurname.touched || authorSurname.dirty) && authorSurname.invalid">
                     <div *ngIf="authorSurname.errors.required" class="card-panel orange">
                         This field is required!
                     </div>
@@ -94,19 +93,14 @@
         <div class="col-md-4">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text upload" id="btnUpload">Upload</span>
+                    <span class="input-group-text upload" id="btnUpload">Upload PDF</span>
                 </div>
                 <div class="custom-file">
                     <form action="/api/upload" method="post" enctype="multipart/form-data">
-                        <input formControlName="articlePDF" type="file" class="custom-file-input" id="inputGroupFile01"
+                        <input formControlName="articlePDF" type="file" class="custom-file-input" id="articlePDF"
                             aria-describedby="inputGroupFileAddon01">
                     </form>
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    <div class="errorContainer" *ngIf="(articlePDF.touched || articlePDF.dirty) && articlePDF.invalid">
-                        <div *ngIf="articlePDF.errors.required" class="card-panel orange">
-                            This field is required!
-                        </div>
-                    </div>
+                    <label class="custom-file-label" for="articlePDF">Choose file</label>
                 </div>
             </div>
         </div>

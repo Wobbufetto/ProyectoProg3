@@ -10,4 +10,5 @@ export interface EvaluatorModel{
     membership: string;
     education: string;
     speciality: string;
+    state : number;
 }

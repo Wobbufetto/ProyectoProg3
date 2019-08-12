@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EvaluatorService } from 'src/app/services/evaluator.service';
+import { EvaluatorModel } from 'src/app/models/evaluator.model';
 
 @Component({
   selector: 'app-evaluator-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluatorListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private evaService: EvaluatorService) { }
 
+  evaluatorList : EvaluatorModel[] = [];
   ngOnInit() {
+    this.getAllEvaluators();
+  }
+
+  getAllEvaluators():void{
+    this.evaService.getAllEvaluators().subscribe(items =>{
+      this.evaluatorList = items;
+    })
   }
 
 }

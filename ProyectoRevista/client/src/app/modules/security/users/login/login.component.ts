@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   onLoginBtnClick(): void{
     this.userService.loginUser(this.email, this.password).subscribe(item =>{
-      //console.warn(item.user);
+      console.log(item);
       this.userService.saveToken(item.id);
       this.userService.saveUserInformation(item.user);
       this.router.navigate(["/articles/home"])

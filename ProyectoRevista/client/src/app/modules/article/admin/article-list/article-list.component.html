@@ -5,6 +5,13 @@
 </a>
 
 <br />
+<br />
+<a class="waves-effect waves-light btn green" routerLink="/admin/author/list">
+    <i class="material-icons right">arrow_back</i>
+    Back
+</a>
+
+<br />
 
 <table class="highlight responsive-table">
     <thead>
@@ -43,8 +50,13 @@
                     Download</a>
             </td>
             <td>
-                <a class="waves-effect waves-light btn red" routerLink="/admin/articles/editor/{{a.id}}"><i
+                <a class="waves-effect waves-light btn blue" routerLink="/admin/articles/editor/{{a.id}}"><i
                         class="material-icons right">edit</i>Edit</a>
+            </td>
+            <td>
+                <a (click)="deleteArticle(a.id)" class="waves-effect waves-light btn red">
+                    <i class="material-icons right">delete</i>
+                    Delete</a>
             </td>
         </tr>
     </tbody>

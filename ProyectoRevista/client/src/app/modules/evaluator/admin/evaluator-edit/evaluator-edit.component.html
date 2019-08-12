@@ -1,1 +1,71 @@
-<p>evaluator-edit works!</p>
+<div class="row center">
+    <input [(ngModel)]="evaluator.id" type="hidden" id="id" />
+    <div class="row">
+        <div class="section">
+            <strong>Editor modify</strong>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.firstName" id="firstName" type="text" class="validate">
+            <label class="active" for="firstName">First Name</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.secondName" id="secondName" type="text" class="validate">
+            <label class="active" for="secondName">Second Name</label>
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.firstSurname" id="firstSurname" type="text" class="validate">
+            <label class="active" for="firstSurname">First Surname</label>
+
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.secondSurname" id="secondSurname" type="text" class="validate">
+            <label class="active" for="secondSurname">Second Surname</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.country" id="country" type="text" class="validate">
+            <label class="active" for="country">Country</label>
+
+        </div>
+        <div class="input-field col s3">
+            <input [(ngModel)]="evaluator.cellPhone" id="cellPhone" type="text" class="validate">
+            <label for="cellPhone">Cell Phone</label>
+        </div>
+        <div class="input-field col s4">
+            <input [(ngModel)]="evaluator.email" id="email" type="text" class="validate">
+            <label class="active" for="email">Email</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <input [(ngModel)]="evaluator.membership" id="membership" type="text" class="validate">
+            <label class="active" for="membership">Membership</label>
+        </div>
+        <div class="input-field col s4">
+            <input [(ngModel)]="evaluator.education" id="education" type="text" class="validate">
+            <label class="active" for="education">Education</label>
+        </div>
+        <div class="input-field col s4">
+            <input [(ngModel)]="evaluator.speciality" id="speciality" type="text" class="validate">
+            <label class="active" for="speciality">Speciality</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <input [(ngModel)]="evaluator.state" id="state" type="text" class="validate">
+            <label class="active" for="state">State</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a class="waves-effect waves-light btn green" (click)="updateEvaluator()">
+                <i class="material-icons right">update</i>
+                Update</a>&nbsp;&nbsp;
+            <a class="waves-effect waves-light btn red" routerLink="/admin/evaluator/list">
+                <i class="material-icons right">cancel</i>
+                Cancel
+            </a>
+        </div>
+    </div>
+</div>

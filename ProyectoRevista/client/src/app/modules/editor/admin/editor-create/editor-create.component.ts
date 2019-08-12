@@ -54,10 +54,10 @@ export class EditorCreateComponent implements OnInit {
     return this.editorFormGroup.get('education');
   }
   get secondName(){
-    return this.secondName.get('secondName');
+    return this.editorFormGroup.get('secondName');
   }
   get secondSurname(){
-    return this.secondSurname.get('secondSurname')
+    return this.editorFormGroup.get('secondSurname')
   }
 
 
@@ -67,7 +67,7 @@ export class EditorCreateComponent implements OnInit {
       let editor = this.buildEditorData();
       this.edtService.saveNewEditor(editor).subscribe(item => {
         alert("The editor has been created successfully!");
-        this.router.navigate(["/admin/editor/list"]);
+        this.router.navigate(["/edition/articles"]);
       })
       console.log("saved");
     } else {

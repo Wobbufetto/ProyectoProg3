@@ -6,12 +6,15 @@ import { EvaluatorListComponent } from './admin/evaluator-list/evaluator-list.co
 import { EvaluatorCreateComponent } from './admin/evaluator-create/evaluator-create.component';
 import { EvaluatorEditComponent } from './admin/evaluator-edit/evaluator-edit.component';
 import { EvaluatorHomeComponent } from './public/evaluator-home/evaluator-home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [EvaluatorListComponent, EvaluatorCreateComponent, EvaluatorEditComponent, EvaluatorHomeComponent],
   imports: [
     CommonModule,
-    EvaluatorRoutingModule
+    EvaluatorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     EvaluatorListComponent,

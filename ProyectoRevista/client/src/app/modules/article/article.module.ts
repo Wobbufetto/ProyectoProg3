@@ -7,9 +7,11 @@ import { ArticleEditComponent } from './admin/article-edit/article-edit.componen
 import { ArticleHomeComponent } from './public/article-home/article-home.component';
 import { ArticleListComponent } from './admin/article-list/article-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ArticleEditionComponent } from './public/article-edition/article-edition.component';
+import { CreateEditionComponent } from './admin/create-edition/create-edition.component';
 
 @NgModule({
-  declarations: [ArticleCreatorComponent,ArticleEditComponent, ArticleHomeComponent, ArticleListComponent],
+  declarations: [ArticleCreatorComponent,ArticleEditComponent, ArticleHomeComponent, ArticleListComponent, ArticleEditionComponent, CreateEditionComponent],
   imports: [
     CommonModule,
     ArticleRoutingModule,
