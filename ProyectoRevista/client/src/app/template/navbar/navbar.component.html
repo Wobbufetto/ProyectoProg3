@@ -1,4 +1,4 @@
-<nav class="blue">
+<nav class="grey">
   <div class="nav-wrapper">
     <a routerLink="/articles/home" class="brand-logo">Vector Magazine</a>
     <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -7,10 +7,12 @@
       <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Login user" routerLink="/user/login">Login</a></li>
       <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Logout user" routerLink="/user/logout">Logout</a></li>
       <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all authors" routerLink="/admin/author/list">Authors</a></li>
+      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all editors" routerLink="/admin/editor/list">Editors</a></li>
+   
     </ul>
   </div>
   <div *ngIf="userLogged">
-    <strong>In session: {{completeName}}</strong>
+    <strong>In session: {{rol}}</strong>
   </div>
 </nav>
 
@@ -27,4 +29,5 @@
   <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>
   <li *ngIf="userLogged"><a routerLink="/user/logout"><i class="material-icons">input</i>Logout</a></li>
   <li *ngIf="userLogged"><a routerLink="/admin/author/list"><i class="material-icons">group</i>Authors</a></li>
+  <li *ngIf="userLogged"><a routerLink="/admin/editor/list"><i class="material-icons">group</i>Editors</a></li>
 </ul>

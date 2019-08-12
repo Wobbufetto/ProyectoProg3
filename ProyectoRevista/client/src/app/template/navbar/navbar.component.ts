@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
   userLogged: boolean = false;
   completeName: string = '';
   dirEmail : string = '';
+  numberRol: number = 0;
+  rol: string = '';
 
   ngOnInit() {
     this.showMenu();
@@ -27,6 +29,14 @@ export class NavbarComponent implements OnInit {
       this.userLogged = true;
       this.completeName = userInfo.realm;
       this.dirEmail = userInfo.email;
+      this.numberRol = userInfo.rol;
+      if(this.numberRol == 1){
+        this.rol = "Author User";
+      }else if(this.numberRol == 2){
+        this.rol = "Editor User";
+      }else{
+        this.rol = "Evaluator User"
+      }
     }
   }
   

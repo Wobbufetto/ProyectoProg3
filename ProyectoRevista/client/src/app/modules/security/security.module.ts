@@ -5,19 +5,24 @@ import { SecurityRoutingModule } from './security-routing.module';
 import { LoginComponent } from './users/login/login.component';
 import { LogoutComponent } from './users/logout/logout.component';
 import { RegisterComponent } from './users/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule } from 'ng-recaptcha';
+import { ReloginComponent } from './relogin/relogin.component';
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, LogoutComponent],
+  declarations: [RegisterComponent, LoginComponent, LogoutComponent, ReloginComponent],
   imports: [
     CommonModule,
     SecurityRoutingModule,
-    FormsModule
+    FormsModule,
+    RecaptchaModule,
+    ReactiveFormsModule
   ],
   exports:[
     RegisterComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    ReloginComponent
   ]
 })
 export class SecurityModule { }

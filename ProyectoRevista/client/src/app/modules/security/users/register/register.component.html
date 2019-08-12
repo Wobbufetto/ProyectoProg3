@@ -33,7 +33,14 @@
                 </select>
                 <label>Choose role</label>
             </div>
-
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <re-captcha (resolved)="resolved($event)" siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU">
+                </re-captcha>
+            </div>
+        </div>
+        <div class="row">
             <div class="input-field col s6">
                 <button class="btn btn-large btn-register waves-effect waves-light" type="submit" name="action"
                     (click)="saveNewUser()">Register
@@ -42,6 +49,6 @@
             </div>
         </div>
     </div>
-    <a title="Login" class="ngl btn-floating btn-large waves-effect waves-light red"><i
-            class="material-icons">input</i></a>
+    <a title="Login" class="ngl btn-floating btn-large waves-effect waves-light red"><i class="material-icons"
+            routerLink="/user/login">input</i></a>
 </div>

@@ -15,12 +15,13 @@
             </div>
         </div>
         <div class='row'>
-            <div class='input-field col m12'>
+            <div class='input-field col s12'>
                 <input [(ngModel)]="password" class='validate' type='password' name='password' id='password' required />
                 <label for='password'>Password</label>
             </div>
+            <br />
             <label>
-                <a><b>Forgot Password?</b></a>
+                <a routerLink="/user/relogin"><b>Forgot Password?</b></a>
             </label>
         </div>
         <br />

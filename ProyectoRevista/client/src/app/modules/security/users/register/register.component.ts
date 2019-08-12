@@ -38,9 +38,11 @@ export class RegisterComponent implements OnInit {
       var encrypted = this.EncrDecr.set('123456$#@$^@1ERF', this.user.password);
       var decrypted = this.EncrDecr.get('123456$#@$^@1ERF', encrypted);
       console.log('Encrypted:' + encrypted);
-      console.log('Encrypted:' + decrypted);
       this.router.navigate(["/articles/home"])
     })
+  }
+  public resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
 
 }

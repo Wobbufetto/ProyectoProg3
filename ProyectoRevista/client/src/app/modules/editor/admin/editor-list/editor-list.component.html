@@ -1,1 +1,58 @@
-<p>editor-list works!</p>
+<br />
+<a class="waves-effect waves-light btn green" routerLink="/admin/editor/creator">
+    <i class="material-icons right">add</i>
+    Add new editor
+</a>
+
+<br />
+
+<table class="highlight responsive-table">
+    <thead>
+        <tr>
+            <th>
+                First Name
+            </th>
+            <th>
+                First Surname
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Membership
+            </th>
+            <th>
+                Education
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of editorList">
+            <td>
+                {{a.firstName}}
+            </td>
+            <td>
+                {{a.firstSurname}}
+            </td>
+            <td>
+                {{a.country}}
+            </td>
+            <td>
+                {{a.email}}
+            </td>
+            <td>
+                {{a.membership}}
+            </td>
+            <td>
+                {{a.education}}
+            </td>
+            <td>
+                <a class="waves-effect waves-light btn red" routerLink="/admin/editor/editor/{{a.id}}"><i
+                        class="material-icons right">edit</i>Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

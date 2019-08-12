@@ -5,6 +5,7 @@ import { LoginComponent } from './users/login/login.component';
 import { LogoutComponent } from './users/logout/logout.component';
 import { FormLoginGuard } from 'src/app/guards/form-login.guard';
 import { UrlInjectionGuard } from 'src/app/guards/url-injection.guard';
+import { ReloginComponent } from './relogin/relogin.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,13 @@ const routes: Routes = [
     component: LogoutComponent,
     canActivate: [
       UrlInjectionGuard
+    ]
+  },
+  {
+    path: 'user/relogin',
+    component: ReloginComponent,
+    canActivate: [
+      FormLoginGuard
     ]
   }
 ];

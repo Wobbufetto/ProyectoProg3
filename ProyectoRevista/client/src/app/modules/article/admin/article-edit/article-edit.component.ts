@@ -16,7 +16,6 @@ export class ArticleEditComponent implements OnInit {
 
   article: ArticleModel = {
     id: null,
-    code: null,
     title: null,
     abstract: null,
     keywords: null,
@@ -24,7 +23,8 @@ export class ArticleEditComponent implements OnInit {
     authorName: null,
     authorSurname: null,
     state: null,
-    date: null
+    date: null,
+    articlePDf: null
   }
 
   author: AuthorModel = {

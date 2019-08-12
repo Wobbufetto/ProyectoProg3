@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './template/navbar/navbar.component';
@@ -9,8 +8,9 @@ import { FooterComponent } from './template/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './template/home/home.component';
 import { PageNotFoundComponent } from './template/page-not-found/page-not-found.component';
-import { FormsModule } from '@angular/forms';
-import {EncrDecrService} from './services/encr-decr-service.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EncrDecrService } from './services/encr-decr-service.service';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,9 @@ import {EncrDecrService} from './services/encr-decr-service.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RecaptchaModule,
+    ReactiveFormsModule
   ],
   providers: [EncrDecrService],
   bootstrap: [AppComponent]

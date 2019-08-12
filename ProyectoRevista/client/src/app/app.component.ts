@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +7,5 @@ import { HttpClient } from 'selenium-webdriver/http';
 })
 export class AppComponent {
   title = 'front';
+  
 }

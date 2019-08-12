@@ -7,10 +7,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "code": {
-      "type": "string",
-      "required": true
-    },
     "title": {
       "type": "string",
       "required": true
@@ -32,7 +28,7 @@
       "type": "string",
       "required": true
     },
-    "image": {
+    "articlePDf": {
       "type": "string",
       "required": true
     },
@@ -41,6 +37,10 @@
     },
     "date": {
       "type": "Date",
+      "required": true
+    },
+    "image":{
+      "type": "string",
       "required": true
     }
   },
