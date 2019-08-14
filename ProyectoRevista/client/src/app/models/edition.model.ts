@@ -1,8 +1,7 @@
 export interface EditionModel {
     id : string;
     name : string;
-    volEdition : string;
+    volEdition : number;
     description : string;
-    dateLimit : string
-
+    dateLimit : string;
 }

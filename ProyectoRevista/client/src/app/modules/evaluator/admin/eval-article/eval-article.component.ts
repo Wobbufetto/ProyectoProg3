@@ -2,17 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleModel } from 'src/app/models/articule.model';
-import { AuthorModel } from 'src/app/models/author.model';
-import { AuthorService } from 'src/app/services/author.service';
 
 @Component({
-  selector: 'app-article-edit',
-  templateUrl: './article-edit.component.html',
-  styleUrls: ['./article-edit.component.css']
+  selector: 'app-eval-article',
+  templateUrl: './eval-article.component.html',
+  styleUrls: ['./eval-article.component.css']
 })
-export class ArticleEditComponent implements OnInit {
+export class EvalArticleComponent implements OnInit {
 
-  constructor(private autService: AuthorService, private artService: ArticleService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private artService: ArticleService, private route: ActivatedRoute, private router: Router) { }
 
   article: ArticleModel = {
     id: null,
@@ -31,18 +29,6 @@ export class ArticleEditComponent implements OnInit {
     score: null
   }
 
-  author: AuthorModel = {
-    id: null,
-    firstName: null,
-    secondName: null,
-    firstSurname: null,
-    secondSurname: null,
-    country: null,
-    cellPhone: null,
-    email: null,
-    membership: null,
-    education: null
-  }
   ngOnInit() {
     this.searchArticle();
   }

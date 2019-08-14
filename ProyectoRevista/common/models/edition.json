@@ -12,9 +12,8 @@
       "required": true
     },
     "volEdition": {
-      "type": "string",
-      "required": true,
-      "default": "Volumen"
+      "type": "number",
+      "required": true
     },
     "description": {
       "type": "string",

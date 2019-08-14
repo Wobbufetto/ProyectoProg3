@@ -26,6 +26,8 @@ export class EvaluatorEditComponent implements OnInit {
     speciality: null,
     state: null
   }
+
+  stateEval: string = '';
   ngOnInit() {
     this.searchEvaluator();
   }
@@ -34,6 +36,13 @@ export class EvaluatorEditComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.evaService.getEvaluatorById(id).subscribe(item => {
       this.evaluator = item;
+      if (this.evaluator.state == 1){
+        this.stateEval = "Anwser Pending"
+      }else if(this.evaluator.state == 2){
+        this.stateEval = "Evaluator"
+      }else{
+        this.stateEval = "Cancel"
+      }
     });
   }
 

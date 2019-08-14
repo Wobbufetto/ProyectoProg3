@@ -7,9 +7,10 @@ import { EvaluatorCreateComponent } from './admin/evaluator-create/evaluator-cre
 import { EvaluatorEditComponent } from './admin/evaluator-edit/evaluator-edit.component';
 import { EvaluatorHomeComponent } from './public/evaluator-home/evaluator-home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EvalArticleComponent } from './admin/eval-article/eval-article.component';
 
 @NgModule({
-  declarations: [EvaluatorListComponent, EvaluatorCreateComponent, EvaluatorEditComponent, EvaluatorHomeComponent],
+  declarations: [EvaluatorListComponent, EvaluatorCreateComponent, EvaluatorEditComponent, EvaluatorHomeComponent, EvalArticleComponent],
   imports: [
     CommonModule,
     EvaluatorRoutingModule,

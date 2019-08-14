@@ -20,7 +20,7 @@
                 Title
             </th>
             <th>
-                Shipping Date
+                Number Edition
             </th>
             <th>
                 State
@@ -39,15 +39,28 @@
                 {{a.title}}
             </td>
             <td>
+                Volumen N°{{a.numEdition}}
+            </td>
+            <td>
                 {{a.date}}
             </td>
             <td>
                 {{a.state}}
             </td>
             <td>
-                <a class="waves-effect waves-light btn green">
-                    <i class="material-icons right ">file_download</i>
-                    Download</a>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text upload">Upload PDF</span>
+                        </div>
+                        <div class="custom-file">
+                            <form action="/api/upload" method="post" enctype="multipart/form-data">
+                                <input type="file" class="custom-file-input"
+                                    id="articlePDF" aria-describedby="inputGroupFileAddon01">
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </td>
             <td>
                 <a class="waves-effect waves-light btn blue" routerLink="/admin/articles/editor/{{a.id}}"><i

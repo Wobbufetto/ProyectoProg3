@@ -1,10 +1,9 @@
 'use strict';
 
 module.exports = function (Article) {
-    Article.findByAuthor = function (authorName, cb){
-        Article.find({ 
-            where: { 
-                authorName: authorName
+    Article.findByAuthor = function (authorName, cb) {
+        Article.find({
+            where: {
             }
         }, cb);
     };

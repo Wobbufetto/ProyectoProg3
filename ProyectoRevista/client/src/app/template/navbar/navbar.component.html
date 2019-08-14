@@ -3,13 +3,19 @@
     <a routerLink="/articles/home" class="brand-logo">Vector Magazine</a>
     <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Registy" routerLink="/user/registy">Register</a></li>
-      <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Login user" routerLink="/user/login">Login</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Logout user" routerLink="/user/logout">Logout</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all authors" routerLink="/admin/author/list">Authors</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all editors" routerLink="/admin/editor/list">Editors</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all evaluators" routerLink="/admin/evaluator/list">Evaluators</a></li>
-   
+      <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Registy"
+          routerLink="/user/registy">Register</a></li>
+      <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Login user"
+          routerLink="/user/login">Login</a></li>
+      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Logout user"
+          routerLink="/user/logout">Logout</a></li>
+      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all authors"
+          routerLink="/admin/author/list">Authors</a></li>
+      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all editors"
+          routerLink="/admin/editor/list">Editors</a></li>
+      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all evaluators"
+          routerLink="/admin/evaluator/list">Evaluators</a></li>
+
     </ul>
   </div>
   <div *ngIf="userLogged">
@@ -18,18 +24,22 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-    <li><div class="user-view">
-        <div class="background">
-          <img src="images/office.jpg">
-        </div>
-        <a href="#user"><img class="circle" src=""></a>
-        <a href="#name"><span class="black-text name">{{completeName}}</span></a>
-        <a href="#email"><span class="black-text email">{{dirEmail}}</span></a>
-      </div></li>
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img src="images/office.jpg">
+      </div>
+      <a href="#user"><img class="circle" src=""></a>
+      <a href="#name"><span class="black-text name">{{completeName}}</span></a>
+      <a href="#email"><span class="black-text email">{{dirEmail}}</span></a>
+    </div>
+  </li>
   <li *ngIf="!userLogged"><a routerLink="/user/registy">Register</a></li>
-  <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>
-  <li *ngIf="userLogged"><a routerLink="/user/logout"><i class="material-icons">input</i>Logout</a></li>
+  <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>}
+  <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles"><i class="material-icons">list</i>Articles list</a></li>
   <li *ngIf="userLogged"><a routerLink="/admin/author/list"><i class="material-icons">group</i>Authors</a></li>
-  <li *ngIf="userLogged"><a routerLink="/admin/editor/list"><i class="material-icons">group</i>Editors</a></li>
-  <li *ngIf="userLogged"><a routerLink="/admin/evaluator/list"><i class="material-icons">group</i>Evaluators</a></li>
+  <li *ngIf="(userLogged && numberRol != 1 && numberRol != 3)"><a routerLink="/admin/editor/list"><i
+        class="material-icons">group</i>Editors</a></li>
+  <li *ngIf="userLogged && numberRol != 1"><a routerLink="/admin/evaluator/list"><i class="material-icons">group</i>Evaluators</a></li>
+  <li *ngIf="userLogged"><a routerLink="/user/logout"><i class="material-icons">input</i>Logout</a></li>
 </ul>

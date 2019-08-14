@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="input-field col s3">
-                <input formControlName="volEdition" id="volEdition" type="text" class="validate">
+                <input formControlName="volEdition" id="volEdition" type="number" class="validate">
                 <label for="volEdition">Volumen edition</label>
                 <div class="errorContainer" *ngIf="(volEdition.touched || volEdition.dirty) && volEdition.invalid">
                     <div *ngIf="volEdition.errors.required" class="card-panel orange">

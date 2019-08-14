@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EvaluatorService } from 'src/app/services/evaluator.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EvaluatorModel } from 'src/app/models/evaluator.model';
@@ -12,7 +12,7 @@ import { EvaluatorModel } from 'src/app/models/evaluator.model';
 })
 export class EvaluatorCreateComponent implements OnInit {
 
-  constructor(private evaService: EvaluatorService, private router: Router, private http: HttpClient) {
+  constructor(private evaService: EvaluatorService, private router: Router, private http: HttpClient, private route: ActivatedRoute) {
     this.evaFormGroup = this.formGroupCreator();
   }
 
@@ -73,17 +73,26 @@ export class EvaluatorCreateComponent implements OnInit {
   
 
 
-  saveNewEditor(): void {
+  saveNewEvaluator(): void {
     if (this.evaFormGroup.valid) {
       let evalua = this.buildEditorData();
       this.evaService.saveNewEvaluator(evalua).subscribe(item => {
-        alert("The editor has been created successfully!");
+        alert("Wait for the evaluator's response!");
+        this.sendEmail(evalua.email);
         this.router.navigate(["/admin/evaluator/list"]);
       })
       console.log("saved");
     } else {
       console.log("invalid form")
     }
+  }
+
+  sendEmail(emailEv : string): void{
+    let message = "link to accept invitation";
+    let subject = "Confirmacion registro magazine vector";
+    this.evaService.sendEmail(message,subject,emailEv);
+    this.router.navigate(["/Evaluators/sendEmail"])
+    console.log(emailEv);
   }
 
   buildEditorData(): EvaluatorModel {

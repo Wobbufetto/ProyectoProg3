@@ -1,1 +1,52 @@
-<p>evaluator-home works!</p>
+<a class="waves-effect waves-light btn green" routerLink="/admin/author/list">
+    <i class="material-icons right">arrow_back</i>
+    Back
+</a>
+
+<br />
+<div class="container">
+    <table class="highlight responsive-table">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Download
+                </th>
+                <th>
+                    Score
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of articleList">
+                <td>
+                    {{a.id}}
+                </td>
+                <td>
+                    {{a.title}}
+                </td>
+                <td>
+                    {{a.state}}
+                </td>
+                <td>
+                    <a class="waves-effect waves-light btn green">
+                        <i class="material-icons right ">file_download</i>
+                        Download</a>
+                </td>
+                <td>
+                    {{a.score}}
+
+                </td>
+                <td>
+                    <a routerLink="/evaluator/article/score/{{a.id}}" class="waves-effect waves-light btn"><i
+                            class="material-icons right">edit</i>Rate articles</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

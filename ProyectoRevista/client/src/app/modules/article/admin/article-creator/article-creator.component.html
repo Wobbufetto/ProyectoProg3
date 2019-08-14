@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s9">
+            <div class="input-field col s7">
                 <input formControlName="keywords" placeholder="Article keywords;" id="keywords" type="text"
                     class="validate">
                 <label for="keywords">Article keywords</label>
@@ -43,6 +43,15 @@
                     </div>
                     <div *ngIf="keywords.errors.minlength" class="card-panel orange">
                         This field must be at least 5 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="input-field col s3">
+                <input formControlName="numEdition" id="numEdition" type="number" class="validate">
+                <label for="numEdition">Edition Currency</label>
+                <div class="errorContainer" *ngIf="(numEdition.touched || numEdition.dirty) && numEdition.invalid">
+                    <div *ngIf="numEdition.errors.required" class="card-panel orange">
+                        This field is required!
                     </div>
                 </div>
             </div>
@@ -69,7 +78,8 @@
             <div class="input-field col s3">
                 <input formControlName="authorSurname" id="authorSurname" type="text" class="validate">
                 <label for="authorSurname">First Surname</label>
-                <div class="errorContainer" *ngIf="(authorSurname.touched || authorSurname.dirty) && authorSurname.invalid">
+                <div class="errorContainer"
+                    *ngIf="(authorSurname.touched || authorSurname.dirty) && authorSurname.invalid">
                     <div *ngIf="authorSurname.errors.required" class="card-panel orange">
                         This field is required!
                     </div>
@@ -82,25 +92,21 @@
                 </div>
             </div>
             <div class="input-field col s3">
-                <input id="afiliation" type="text" class="validate">
-                <label for="afiliation">Arthor Afiliation</label>
+                <input formGroupName="authorAfil" id="authorAfil" type="text" class="validate">
+                <label for="authorAfil">Arthor Afiliation</label>
+                <div class="errorContainer" *ngIf="(authorAfil.touched || authorAfil.dirty) && authorAfil.invalid">
+                    <div *ngIf="authorAfil.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
+                </div>
             </div>
             <div class="input-field col s3">
-                <input id="email" type="Email" class="validate">
-                <label for="email">Arthor Email</label>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text upload" id="btnUpload">Upload PDF</span>
-                </div>
-                <div class="custom-file">
-                    <form action="/api/upload" method="post" enctype="multipart/form-data">
-                        <input formControlName="articlePDF" type="file" class="custom-file-input" id="articlePDF"
-                            aria-describedby="inputGroupFileAddon01">
-                    </form>
-                    <label class="custom-file-label" for="articlePDF">Choose file</label>
+                <input formGroupName="authorEmail" id="authorEmail" type="text" class="validate">
+                <label for="authorEmail">Arthor Email</label>
+                <div class="errorContainer" *ngIf="(authorEmail.touched || authorEmail.dirty) && authorEmail.invalid">
+                    <div *ngIf="authorEmail.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,7 +117,7 @@
                     <i class="material-icons right">save</i>
                 </button>
                 &nbsp;&nbsp;
-                <a class="waves-effect waves-light btn red">
+                <a class="waves-effect waves-light btn red" routerLink="/edition/articles">
                     <i class="material-icons right">cancel</i>
                     Cancel</a>
             </div>

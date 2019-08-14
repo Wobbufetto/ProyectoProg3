@@ -28,21 +28,34 @@
       "type": "string",
       "required": true
     },
-    "articlePDf": {
-      "type": "File",
+    "authorEmail": {
+      "type": "string",
       "required": true
+    },
+    "authorAfil": {
+      "type": "string",
+      "required": true
+    },
+    "articlePDf": {
+      "type": "string"
     },
     "state": {
       "type": "string",
       "default": "Enviado"
     },
     "date": {
-      "type": "Date",
-      "required": true
+      "type": "Date"
     },
     "image": {
-      "type": "string",
+      "type": "string"
+    },
+    "numEdition": {
+      "type": "number",
       "required": true
+    },
+    "score": {
+      "type": "number",
+      "default": 0
     }
   },
   "validations": [],

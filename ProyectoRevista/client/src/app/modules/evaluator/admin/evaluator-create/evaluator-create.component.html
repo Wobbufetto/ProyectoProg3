@@ -1,8 +1,8 @@
-<form [formGroup]="evaFormGroup" (ngSubmit)="saveNewEditor()">
+<form [formGroup]="evaFormGroup" (ngSubmit)="saveNewEvaluator()">
     <div class="row center">
         <div class="row">
             <div class="section">
-                <strong>New editor form</strong>
+                <strong>New evaluator form</strong>
             </div>
             <div class="input-field col s3">
                 <input formControlName="firstName" id="firstName" type="text" class="validate">
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s4">
+            <div class="input-field col s3">
                 <input formControlName="membership" id="membership" type="text" class="validate">
                 <label for="membership">Membership</label>
                 <div class="errorContainer" *ngIf="(membership.touched || membership.dirty) && membership.invalid">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="input-field col s4">
+            <div class="input-field col s3">
                 <input formControlName="education" id="education" type="text" class="validate">
                 <label for="education">Education</label>
                 <div class="errorContainer" *ngIf="(education.touched || education.dirty) && education.invalid">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </div>
-            <div class="input-field col s4">
+            <div class="input-field col s3">
                 <input formControlName="speciality" id="speciality" type="text" class="validate">
                 <label for="speciality">Speciality</label>
                 <div class="errorContainer" *ngIf="(speciality.touched || speciality.dirty) && speciality.invalid">

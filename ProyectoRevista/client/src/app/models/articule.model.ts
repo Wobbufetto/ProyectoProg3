@@ -1,12 +1,16 @@
 export interface ArticleModel{
     id: string;
     title: string;
-    abstract : string;
+    abstract: string;
     keywords: string;
-    authorName : string;
+    authorName: string;
     authorSurname: string;
-    articlePDf : File;
-    state : string;
+    authorEmail: string;
+    authorAfil: string;
+    articlePDf: string;
+    state: string;
     date: Date;
     image: string;
+    numEdition: number;
+    score: number;
 }

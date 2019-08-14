@@ -23,9 +23,17 @@ export class ArticleCreatorComponent implements OnInit {
       title: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]),
       abstract: new FormControl('', [Validators.required, Validators.minLength(20)]),
       keywords: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      articlePDf: new FormControl('', [Validators.required]),
       authorName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
-      authorSurname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)])
+      authorSurname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+      authorEmail: new FormControl('', [Validators.required]),
+      authorAfil: new FormControl('', [Validators.required]),
+      numEdition: new FormControl('', [Validators.required]),
+      articlePDf: new FormControl(''),
+      state: new FormControl(''),
+      score: new FormControl(''),
+      date: new FormControl(''),
+      image: new FormControl('')
+
     });
   }
 
@@ -38,15 +46,37 @@ export class ArticleCreatorComponent implements OnInit {
   get keywords() {
     return this.articleFormGroup.get('keywords');
   }
-  get articlePDF() {
-    return this.articleFormGroup.get('articlePDf');
-  }
   get authorName() {
     return this.articleFormGroup.get('authorName');
   }
   get authorSurname() {
     return this.articleFormGroup.get('authorSurname');
   }
+  get authorEmail(){
+    return this.articleFormGroup.get('authorEmail');
+  }
+  get authorAfil(){
+    return this.articleFormGroup.get('authorAfil');
+  }
+  get numEdition(){
+    return this.articleFormGroup.get('numEdition');
+  }
+  get articlePDf(){
+    return this.articleFormGroup.get('articlePDf');
+  }
+  get state(){
+    return this.articleFormGroup.get('state');
+  }
+  get score(){
+    return this.articleFormGroup.get('score');
+  }
+  get date(){
+    return this.articleFormGroup.get('date');
+  }
+  get image(){
+    return this.articleFormGroup.get('image');
+  }
+
 
   uploadedFiles: Array<File>;
 
@@ -69,7 +99,7 @@ export class ArticleCreatorComponent implements OnInit {
   upload() {
     let formData = new FormData();
     formData.append("uploads[]", this.uploadedFiles[0], this.uploadedFiles[0].name);
-    this.http.post('/api/containers/images/upload', formData).subscribe((response) => {
+    this.http.post('/api/containers/documents/upload', formData).subscribe((response) => {
       console.log('PDF receiveed is', response);
     })
   }
@@ -82,10 +112,14 @@ export class ArticleCreatorComponent implements OnInit {
       keywords: this.keywords.value,
       authorName: this.authorName.value,
       authorSurname: this.authorSurname.value,
-      articlePDf: this.articlePDF.value,
-      state: null,
-      date: null,
-      image: null
+      authorEmail: this.authorEmail.value,
+      authorAfil: this.authorAfil.value,
+      articlePDf: this.articlePDf.value,
+      state: this.state.value,
+      date: this.date.value,
+      image: this.image.value,
+      numEdition: this.numEdition.value,
+      score: this.score.value
     }
     return article;
   }
