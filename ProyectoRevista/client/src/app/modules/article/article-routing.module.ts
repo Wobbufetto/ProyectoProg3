@@ -51,6 +51,13 @@ const routes: Routes = [
   {
     path: 'edition/articles',
     component: ArticleEditionComponent
+  },
+  {
+    path:'articles/list/:numEdition',
+    component: ArticleListComponent,
+    canActivate: [
+      UrlInjectionGuard
+    ]
   }
 ];
 

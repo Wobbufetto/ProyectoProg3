@@ -2,7 +2,7 @@
     <input [(ngModel)]="article.id" type="hidden" id="id" />
     <div class="row">
         <div class="section">
-            <strong>New article from</strong>
+            <strong>Edit article from</strong>
         </div>
         <div class="input-field col s3">
             <input [(ngModel)]="article.title" id="title" type="text" class="validate">
@@ -29,19 +29,32 @@
             <input [(ngModel)]="article.authorSurname" id="firstSurname" type="text" class="validate">
             <label class="active" for="firstSurname">Author First Surname</label>
         </div>
-    </div>
-    <div class="row">
         <div class="input-field col s5">
             <input [(ngModel)]="article.image" id="image" type="text" class="validate">
             <label class="active" for="image">Article Image</label>
         </div>
+    </div>
+    <div class="row">
         <div class="input-field col s3">
-            <input [(ngModel)]="article.state" id="state" type="text" class="validate">
+            <input disabled [(ngModel)]="article.state" id="state" type="text" class="validate">
             <label class="active" for="state">Article state</label>
         </div>
         <div class="input-field col s3">
-            <input [(ngModel)]="article.date" id="date" type="date" class="validate">
+            <input disabled [(ngModel)]="article.date" id="date" type="date" class="validate">
             <label class="active" for="date">Article state</label>
+        </div>
+        <div class="input-field col s3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text upload">Upload PDF</span>
+                </div>
+                <div class="custom-file">
+                    <form action="/api/upload" method="post" enctype="multipart/form-data">
+                        <input type="file" class="custom-file-input" id="articlePDF"
+                            aria-describedby="inputGroupFileAddon01">
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -49,7 +62,7 @@
             <a class="waves-effect waves-light btn green" (click)="updateArticle()">
                 <i class="material-icons right">update</i>
                 Update</a>&nbsp;&nbsp;
-            <a class="waves-effect waves-light btn red" >
+            <a class="waves-effect waves-light btn red" routerLink="/edition/articles">
                 <i class="material-icons right">cancel</i>
                 Cancel
             </a>

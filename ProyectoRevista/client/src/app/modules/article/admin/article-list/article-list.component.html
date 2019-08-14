@@ -6,7 +6,7 @@
 
 <br />
 <br />
-<a class="waves-effect waves-light btn green" routerLink="/admin/author/list">
+<a class="waves-effect waves-light btn green" routerLink="/edition/articles">
     <i class="material-icons right">arrow_back</i>
     Back
 </a>
@@ -42,25 +42,10 @@
                 Volumen N°{{a.numEdition}}
             </td>
             <td>
-                {{a.date}}
-            </td>
-            <td>
                 {{a.state}}
             </td>
             <td>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text upload">Upload PDF</span>
-                        </div>
-                        <div class="custom-file">
-                            <form action="/api/upload" method="post" enctype="multipart/form-data">
-                                <input type="file" class="custom-file-input"
-                                    id="articlePDF" aria-describedby="inputGroupFileAddon01">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                Download File
             </td>
             <td>
                 <a class="waves-effect waves-light btn blue" routerLink="/admin/articles/editor/{{a.id}}"><i

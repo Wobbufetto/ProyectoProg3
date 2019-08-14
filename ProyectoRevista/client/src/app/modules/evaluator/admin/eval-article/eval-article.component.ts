@@ -41,10 +41,23 @@ export class EvalArticleComponent implements OnInit {
   }
 
   updateArticle() {
+    if (this.article.score >= 1 && this.article.score <= 2.99){
+      console.log(1)
+      this.article.state = "Rechazado";
+    }else if(this.article.score >= 3 && this.article.score <= 3.99){
+      this.article.state = "Aceptado con cambios";
+      console.log(2)
+    }else if(this.article.score >= 4 && this.article.score <= 5 ){
+      this.article.state = "Aceptado";
+      console.log(3)
+    }else{
+      this.article.state = "Enviado";
+      console.log(4)
+    }
     this.artService.updateArticle(this.article).subscribe(item => {
       alert("This article has been updated successfuly!");
       console.log(this.article.authorName);
-      this.router.navigate(["/admin/author/list"])
+      this.router.navigate(["/evaluator/articles"])
     })
   }
 

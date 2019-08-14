@@ -31,6 +31,10 @@ export class ArticleService {
     return this.http.get<ArticleModel[]>(`${base_url}Articles/get-article-by-author?authorName=${authorName}`);
   }
 
+  getArticleByEdition(numEdition: number):Observable<ArticleModel[]>{
+    return this.http.get<ArticleModel[]>(`${base_url}Articles/get-article-by-edition?numEdition=${numEdition}`);
+  }
+
   updateArticle(article: ArticleModel): Observable<ArticleModel>{
     return this.http.put<ArticleModel>(`${base_url}Articles`, article, {
       headers: new HttpHeaders({

@@ -16,7 +16,7 @@ export class EvaluatorHomeComponent implements OnInit {
   showConfirmationButtons: boolean = false;
 
   evalList: EvaluatorModel[] = [];
-  articleList: ArticleModel[] = []
+  articleList: ArticleModel[] = [];
 
   idToShowButtons: string = '';
   ngOnInit() {

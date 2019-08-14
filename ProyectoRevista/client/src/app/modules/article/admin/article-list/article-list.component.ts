@@ -19,6 +19,7 @@ export class ArticleListComponent implements OnInit {
   idToShowButtons: string = '';
   ngOnInit() {
     this.searchAuthor();
+    this.searchEdition();
   }
 
   objectKeys(objeto: any) {
@@ -41,6 +42,14 @@ export class ArticleListComponent implements OnInit {
       //console.log(this.articleList)
     });
   }
+
+  searchEdition(): void{
+    let numEd = this.route.snapshot.params["numEdition"];
+    this.artService.getArticleByEdition(numEd).subscribe(item =>{
+      this.articleList = item;
+    })
+  }
+
 
   ChangeConfirmationButtons(id) {
     this.idToShowButtons = id;

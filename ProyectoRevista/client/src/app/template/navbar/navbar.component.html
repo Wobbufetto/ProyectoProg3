@@ -7,14 +7,15 @@
           routerLink="/user/registy">Register</a></li>
       <li *ngIf="!userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Login user"
           routerLink="/user/login">Login</a></li>
+      <li *ngIf="userLogged  && numberRol != 3"><a class="tooltipped" data-position="bottom"
+          data-tooltip="View all authors" routerLink="/admin/author/list">Authors</a></li>
+      <li *ngIf="userLogged  && numberRol != 1 && numberRol != 3"><a class="tooltipped" data-position="bottom"
+          data-tooltip="View all editors" routerLink="/admin/editor/list">Editors</a></li>
+      <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles">Articles list</a></li>
+      <li *ngIf="userLogged && numberRol != 1"><a class="tooltipped" data-position="bottom"
+          data-tooltip="View all evaluators" routerLink="/admin/evaluator/list">Evaluators</a></li>
       <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Logout user"
           routerLink="/user/logout">Logout</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all authors"
-          routerLink="/admin/author/list">Authors</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all editors"
-          routerLink="/admin/editor/list">Editors</a></li>
-      <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="View all evaluators"
-          routerLink="/admin/evaluator/list">Evaluators</a></li>
 
     </ul>
   </div>
@@ -27,19 +28,22 @@
   <li>
     <div class="user-view">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="https://wallpaperplay.com/walls/full/3/f/3/156611.jpg">
       </div>
-      <a href="#user"><img class="circle" src=""></a>
-      <a href="#name"><span class="black-text name">{{completeName}}</span></a>
-      <a href="#email"><span class="black-text email">{{dirEmail}}</span></a>
+      <a><i class="material-icons">face</i></a>
+      <a><span class="black-text name">{{completeName}}</span></a>
+      <a><span class="black-text email">{{dirEmail}}</span></a>
     </div>
   </li>
   <li *ngIf="!userLogged"><a routerLink="/user/registy">Register</a></li>
   <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>}
-  <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles"><i class="material-icons">list</i>Articles list</a></li>
-  <li *ngIf="userLogged"><a routerLink="/admin/author/list"><i class="material-icons">group</i>Authors</a></li>
+  <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles"><i
+        class="material-icons">list</i>Articles list</a></li>
+  <li *ngIf="(userLogged && numberRol != 3)"><a routerLink="/admin/author/list"><i
+        class="material-icons">group</i>Authors</a></li>
   <li *ngIf="(userLogged && numberRol != 1 && numberRol != 3)"><a routerLink="/admin/editor/list"><i
         class="material-icons">group</i>Editors</a></li>
-  <li *ngIf="userLogged && numberRol != 1"><a routerLink="/admin/evaluator/list"><i class="material-icons">group</i>Evaluators</a></li>
+  <li *ngIf="userLogged && numberRol != 1"><a routerLink="/admin/evaluator/list"><i
+        class="material-icons">group</i>Evaluators</a></li>
   <li *ngIf="userLogged"><a routerLink="/user/logout"><i class="material-icons">input</i>Logout</a></li>
 </ul>

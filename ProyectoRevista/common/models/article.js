@@ -4,6 +4,7 @@ module.exports = function (Article) {
     Article.findByAuthor = function (authorName, cb) {
         Article.find({
             where: {
+                authorName: authorName
             }
         }, cb);
     };
@@ -22,4 +23,30 @@ module.exports = function (Article) {
             verb: "get"
         }
     })
+
+    Article.findByEdition = function (numEdition, cb){
+        Article.find({
+            where: {
+                numEdition:{
+                    eq : numEdition
+                }
+            }
+        }, cb);
+    };
+
+    Article.remoteMethod("findByEdition", {
+        accepts: {
+            arg: "numEdition",
+            type: "number"
+        },
+        returns: {
+            arg: "names",
+            type: "array"
+        },
+        http: {
+            path: "/get-article-by-edition",
+            verb: "get"
+        }
+    })
+
 };
