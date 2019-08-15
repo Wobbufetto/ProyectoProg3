@@ -67,7 +67,7 @@ export class EditorCreateComponent implements OnInit {
       let editor = this.buildEditorData();
       this.edtService.saveNewEditor(editor).subscribe(item => {
         alert("The editor has been created successfully!");
-        this.router.navigate(["/edition/articles"]);
+        this.router.navigate(["/admin/editor/list"]);
       })
       console.log("saved");
     } else {

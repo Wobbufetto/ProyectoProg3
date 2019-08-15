@@ -58,12 +58,29 @@
             <td>
                 {{a.speciality}}
             </td>
-            <td >
+            <td>
                 {{a.state}}
             </td>
             <td>
-                <a class="waves-effect waves-light btn red" routerLink="/admin/evaluator/editor/{{a.id}}"><i
+                <a class="waves-effect waves-light btn green" routerLink="/admin/evaluator/editor/{{a.id}}"><i
                         class="material-icons right">edit</i>Edit</a>
+            </td>
+            <td>
+                <a *ngIf="!showConfirmationButtons; else deleteConfirmationTemplate"
+                    (click)="ChangeConfirmationButtons(a.id)" class="waves-effect waves-light btn red">
+                    <i class="material-icons right">delete</i>
+                    Delete</a>
+                <ng-template #deleteConfirmationTemplate>
+                    <div *ngIf="idToSHowButtons == a.id">
+                        <a class="waves-effect waves-light btn green" (click)="deleteEvaluator(a.id)">
+                            <i class="material-icons right">delete</i>
+                            Confirm</a>&nbsp;&nbsp;
+                        <a class="waves-effect waves-light btn red" (click)="ChangeConfirmationButtons('')">
+                            <i class="material-icons right">delete</i>
+                            Cancel</a>
+                    </div>
+                </ng-template>
+
             </td>
         </tr>
     </tbody>

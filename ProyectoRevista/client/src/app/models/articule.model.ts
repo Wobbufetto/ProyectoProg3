@@ -7,10 +7,9 @@ export interface ArticleModel{
     authorSurname: string;
     authorEmail: string;
     authorAfil: string;
-    articlePDf: string;
+    articlePDF: string;
     state: string;
     date: Date;
-    image: string;
     numEdition: number;
     score: number;
 }

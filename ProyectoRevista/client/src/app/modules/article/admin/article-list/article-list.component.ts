@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleModel } from 'src/app/models/articule.model';
+import { isNullOrUndefined } from 'util';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-article-list',
@@ -10,13 +12,20 @@ import { ArticleModel } from 'src/app/models/articule.model';
 })
 export class ArticleListComponent implements OnInit {
 
-  constructor(private artService: ArticleService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private artService: ArticleService, private router: Router, private route: ActivatedRoute, private userService: UserService) { }
 
   showConfirmationButtons: boolean = false;
 
   articleList: ArticleModel[] = [];
 
   idToShowButtons: string = '';
+  userLogged: boolean = false;
+  completeName: string = '';
+  dirEmail : string = '';
+  numberRol: number = 0;
+  rol: string = '';
+
+
   ngOnInit() {
     this.searchAuthor();
     this.searchEdition();
@@ -26,7 +35,18 @@ export class ArticleListComponent implements OnInit {
     const keys = Object.values(objeto);
     console.log(keys)
     return keys;
+  }
 
+  showMenu(): void {
+    let userInfo = this.userService.getUserInformation();
+    if (isNullOrUndefined(userInfo)) {
+      this.userLogged = false;
+    } else {
+      this.userLogged = true;
+      this.completeName = userInfo.realm;
+      this.dirEmail = userInfo.email;
+      this.numberRol = userInfo.rol;
+    }
   }
 
   getAllArticles(): void {

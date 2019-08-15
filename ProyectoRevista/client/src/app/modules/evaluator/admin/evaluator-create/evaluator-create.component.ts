@@ -94,6 +94,7 @@ export class EvaluatorCreateComponent implements OnInit {
     this.router.navigate(["/Evaluators/sendEmail"])
     console.log(emailEv);
   }
+  
 
   buildEditorData(): EvaluatorModel {
     let evaluator: EvaluatorModel = {

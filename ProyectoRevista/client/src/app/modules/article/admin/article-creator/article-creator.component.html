@@ -111,6 +111,46 @@
             </div>
         </div>
         <div class="row">
+            <div class="input-field col s3">
+                <input formGroupName="articlePDF" id="articlePDF" type="text" class="validate">
+                <label for="articlePDF">Article PDF</label>
+                <div class="errorContainer" *ngIf="(articlePDF.touched || articlePDF.dirty) && articlePDF.invalid">
+                    <div *ngIf="articlePDF.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
+                </div>
+            </div>
+            <div class="input-field col s3">
+                <input formGroupName="state" id="state" type="text" class="validate">
+                <label for="state">Article State</label>
+                <div class="errorContainer" *ngIf="(state.touched || state.dirty) && authorAfil.invalid">
+                    <div *ngIf="state.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
+                </div>
+            </div>
+            <div class="input-field col s3">
+                <input formGroupName="score" id="score" type="number" class="validate">
+                <label for="score">Article Score</label>
+                <div class="errorContainer" *ngIf="(score.touched || score.dirty) && score.invalid">
+                    <div *ngIf="score.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
+                </div>
+
+            </div>
+            <div class="input-field col s3">
+                <input formGroupName="date" id="date" type="date" class="validate">
+                <label for="date">Article Date</label>
+                <div class="errorContainer" *ngIf="(date.touched || date.dirty) && date.invalid">
+                    <div *ngIf="date.errors.required" class="card-panel orange">
+                        This field is required!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
             <div class="col s12">
                 <button class="btn green" type="submit" value="save">
                     Save

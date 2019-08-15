@@ -46,9 +46,6 @@
     "date": {
       "type": "Date"
     },
-    "image": {
-      "type": "string"
-    },
     "numEdition": {
       "type": "number",
       "required": true

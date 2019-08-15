@@ -1,11 +1,11 @@
-
-
 <div class="row">
-    <a class="waves-effect waves-light btn green" routerLink="/edition/articles/creator">
+    <a *ngIf="userLogged && numberRol ==2" class="waves-effect waves-light btn green"
+        routerLink="/edition/articles/creator">
         <i class="material-icons right">add</i>
         Add new edition
     </a>
-    <a class="waves-effect waves-light btn green" routerLink="/admin/articles/creator">
+    <a *ngIf="userLogged && numberRol ==2 && numberRol ==1" class="waves-effect waves-light btn green"
+        routerLink="/admin/articles/creator">
         <i class="material-icons right">arrow_back</i>
         Add articles
     </a>

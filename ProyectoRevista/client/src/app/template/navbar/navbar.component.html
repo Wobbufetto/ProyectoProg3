@@ -12,7 +12,7 @@
       <li *ngIf="userLogged  && numberRol != 1 && numberRol != 3"><a class="tooltipped" data-position="bottom"
           data-tooltip="View all editors" routerLink="/admin/editor/list">Editors</a></li>
       <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles">Articles list</a></li>
-      <li *ngIf="userLogged && numberRol != 1"><a class="tooltipped" data-position="bottom"
+      <li *ngIf="userLogged && numberRol != 1 && numberRol != 3"><a class="tooltipped" data-position="bottom"
           data-tooltip="View all evaluators" routerLink="/admin/evaluator/list">Evaluators</a></li>
       <li *ngIf="userLogged"><a class="tooltipped" data-position="bottom" data-tooltip="Logout user"
           routerLink="/user/logout">Logout</a></li>
@@ -36,14 +36,14 @@
     </div>
   </li>
   <li *ngIf="!userLogged"><a routerLink="/user/registy">Register</a></li>
-  <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>}
+  <li *ngIf="!userLogged"><a routerLink="/user/login">Login</a></li>
   <li *ngIf="userLogged && numberRol == 3"><a routerLink="/evaluator/articles"><i
         class="material-icons">list</i>Articles list</a></li>
   <li *ngIf="(userLogged && numberRol != 3)"><a routerLink="/admin/author/list"><i
         class="material-icons">group</i>Authors</a></li>
   <li *ngIf="(userLogged && numberRol != 1 && numberRol != 3)"><a routerLink="/admin/editor/list"><i
         class="material-icons">group</i>Editors</a></li>
-  <li *ngIf="userLogged && numberRol != 1"><a routerLink="/admin/evaluator/list"><i
+  <li *ngIf="userLogged && numberRol != 1 && numberRol != 3"><a routerLink="/admin/evaluator/list"><i
         class="material-icons">group</i>Evaluators</a></li>
   <li *ngIf="userLogged"><a routerLink="/user/logout"><i class="material-icons">input</i>Logout</a></li>
 </ul>

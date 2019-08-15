@@ -4,6 +4,8 @@ import { EditionModel } from 'src/app/models/edition.model';
 import { ArticleService } from 'src/app/services/article.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ArticleModel } from 'src/app/models/articule.model';
+import { UserService } from 'src/app/services/user.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-article-edition',
@@ -12,13 +14,32 @@ import { ArticleModel } from 'src/app/models/articule.model';
 })
 export class ArticleEditionComponent implements OnInit {
 
-  constructor(private edtService: EditionService, private artService: ArticleService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private edtService: EditionService, private artService: ArticleService, private router: Router, private route: ActivatedRoute, private userService: UserService) { }
 
   editionList : EditionModel[]=[];
   articleList: ArticleModel[]=[];
+
+  userLogged: boolean = false;
+  completeName: string = '';
+  dirEmail : string = '';
+  numberRol: number = 0;
+  rol: string = '';
   
   ngOnInit() {
     this.getAllEditions();
+    this.showMenu();
+  }
+
+  showMenu(): void {
+    let userInfo = this.userService.getUserInformation();
+    if (isNullOrUndefined(userInfo)) {
+      this.userLogged = false;
+    } else {
+      this.userLogged = true;
+      this.completeName = userInfo.realm;
+      this.dirEmail = userInfo.email;
+      this.numberRol = userInfo.rol;
+    }
   }
 
   getAllEditions() : void{

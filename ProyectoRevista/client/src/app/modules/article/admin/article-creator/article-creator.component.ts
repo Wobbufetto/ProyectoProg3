@@ -28,11 +28,10 @@ export class ArticleCreatorComponent implements OnInit {
       authorEmail: new FormControl('', [Validators.required]),
       authorAfil: new FormControl('', [Validators.required]),
       numEdition: new FormControl('', [Validators.required]),
-      articlePDf: new FormControl(''),
+      articlePDF: new FormControl(''),
       state: new FormControl(''),
       score: new FormControl(''),
-      date: new FormControl(''),
-      image: new FormControl('')
+      date: new FormControl('')
 
     });
   }
@@ -61,8 +60,8 @@ export class ArticleCreatorComponent implements OnInit {
   get numEdition(){
     return this.articleFormGroup.get('numEdition');
   }
-  get articlePDf(){
-    return this.articleFormGroup.get('articlePDf');
+  get articlePDF(){
+    return this.articleFormGroup.get('articlePDF');
   }
   get state(){
     return this.articleFormGroup.get('state');
@@ -72,9 +71,6 @@ export class ArticleCreatorComponent implements OnInit {
   }
   get date(){
     return this.articleFormGroup.get('date');
-  }
-  get image(){
-    return this.articleFormGroup.get('image');
   }
 
 
@@ -114,10 +110,9 @@ export class ArticleCreatorComponent implements OnInit {
       authorSurname: this.authorSurname.value,
       authorEmail: this.authorEmail.value,
       authorAfil: this.authorAfil.value,
-      articlePDf: this.articlePDf.value,
+      articlePDF: this.articlePDF.value,
       state: this.state.value,
       date: this.date.value,
-      image: this.image.value,
       numEdition: this.numEdition.value,
       score: this.score.value
     }

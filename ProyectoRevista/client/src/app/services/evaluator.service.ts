@@ -34,7 +34,7 @@ export class EvaluatorService {
   }
 
   sendEmail(message : string, subject : string, evalEmail : string):Observable<EvaluatorModel[]>{
-    return this.http.get<EvaluatorModel[]>(`${base_url}Evaluators/sendEmail?message=${message}&subject=${subject}&subject=${evalEmail}&access_token=${this.token}`);
+    return this.http.get<EvaluatorModel[]>(`${base_url}Evaluators/sendEmail?message=${message}&subject=${subject}&emailAddresses=juanka970129%40gmail.com`);
   }
 
   updateEvaluator(evaluator: EvaluatorModel): Observable<EvaluatorModel>{
